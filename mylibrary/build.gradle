@@ -34,12 +34,12 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.2.0'
     // Coroutines 協程
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
     // Room libs
-    implementation "androidx.room:room-runtime:$room_version"
-    implementation "androidx.room:room-common:$room_version"
-    implementation "androidx.room:room-ktx:$room_version"
+    api "androidx.room:room-runtime:$room_version"
+    api "androidx.room:room-common:$room_version"
+    api "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version" // Kotlin version
 //    annotationProcessor "androidx.room:room-compiler:$room_version" // Java version
     testImplementation 'junit:junit:4.13'
