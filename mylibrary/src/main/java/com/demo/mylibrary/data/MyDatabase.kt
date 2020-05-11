@@ -11,7 +11,7 @@ abstract class MyDatabase : RoomDatabase() {
     abstract fun recordDao() : RecordDao
 
     companion object {
-        var instant : MyDatabase? = null
+        private var instant : MyDatabase? = null
         fun getInstant(context: Context) : MyDatabase? {
             if (instant == null) {
                 instant = Room.databaseBuilder(
