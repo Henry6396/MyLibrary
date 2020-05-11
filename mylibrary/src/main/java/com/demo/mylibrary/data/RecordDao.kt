@@ -1,0 +1,19 @@
+package com.demo.mylibrary.data
+
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+
+interface RecordDao {
+    // 在coroutines上面執行，必須加上suspend
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE) // 如果有重複資料就更新它
+    suspend fun insert(record: Record)
+
+    @Query("select * from Record")
+    suspend fun getAll() : List<Record>
+
+    @Delete
+    suspend fun delete(record: Record)
+}
