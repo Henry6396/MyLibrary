@@ -1,10 +1,8 @@
 package com.demo.mylibrary.data
 
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
+@Dao
 interface RecordDao {
     // 在coroutines上面執行，必須加上suspend
 
