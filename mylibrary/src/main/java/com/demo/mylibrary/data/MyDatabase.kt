@@ -1,20 +1,21 @@
 package com.demo.mylibrary.data
 
 import android.content.Context
+import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@androidx.room.Database(entities = arrayOf(Record::class, Word::class), version = 1)
-abstract class Database : RoomDatabase() {
+@Database(entities = arrayOf(Record::class, Word::class), version = 1)
+abstract class MyDatabase : RoomDatabase() {
 
     abstract fun recordDao() : RecordDao
 
     companion object {
-        var instant : Database? = null
-        fun getInstant(context: Context) : Database? {
+        var instant : MyDatabase? = null
+        fun getInstant(context: Context) : MyDatabase? {
             if (instant == null) {
                 instant = Room.databaseBuilder(
-                    context, Database::class.java, "game.db"
+                    context, MyDatabase::class.java, "game.db"
                 ).build()
             }
             return instant
