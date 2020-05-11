@@ -9,7 +9,7 @@ interface RecordDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE) // 如果有重複資料就更新它
     suspend fun insert(record: Record)
 
-    @Query("select * from Record")
+    @Query("select * from record")
     suspend fun getAll() : List<Record>
 
     @Delete
